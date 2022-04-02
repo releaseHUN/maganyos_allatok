@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+:root{
+	--clr-light: #f5f5f5;
+	--clr-dark: #2c2c2c;
+	--clr-secondary: #0842a2;
+	--clr-accent: #045cf5;
+	--clr-nav-light: #dcdcdc;
+	--clr-nav-dark: #212121;
+	--clr-shadow: gray;
+	--clr-focus-light: #eaeaea;
+	--clr-focus-dark: #343434;
+	--clr-buton1-light: #e5e5e5;
+	--clr-buton2-light: #f3f3f3;
+	--clr-buton1-dark: #262626;
+	--clr-buton2-dark: #3b3b3b;
+	--clr-desc-light: #e0e0e0;
+	--clr-desc-dark: #2a2a2a;
+	--clr-red: #be0000;
+	--clr-red-hover: #ff0000;
+
+	--clr-desc: var(--clr-desc-light);
+	--clr-button1: var(--clr-buton1-light);
+	--clr-button2: var(--clr-buton2-light);
+	--clr-focus: var(--clr-focus-light);
+	--clr-nav: var(--clr-nav-light);
+	--foreground: var(--clr-dark);
+	--background: var(--clr-light);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--background: var(--clr-dark);
+		--foreground: var(--clr-light);
+		--clr-nav: var(--clr-nav-dark);
+		--clr-shadow: black;
+		--clr-focus: var(--clr-focus-dark);
+		--clr-button1: var(--clr-buton1-dark);
+		--clr-button2: var(--clr-buton2-dark);
+		--clr-desc: var(--clr-desc-dark);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*, ::before, ::after {
+		animation-delay: -1ms !important;
+		animation-duration: 1ms !important;
+		animation-iteration-count: 1 !important;
+		background-attachment: initial !important;
+		scroll-behavior: auto !important;
+		transition-duration: 0s !important;
+		transition-delay: 0s !important;
+	}
+}
+
+body {
+	background-color: var(--background);
+}
+
+* {
+	color: var(--foreground);
+	font-family: "Montserrat", sans-serif;
+	font-weight: 400;
+	font-size: 1rem;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 30px 10%;
+	background-color: var(--clr-nav);
+	box-shadow: 0 0 15px var(--clr-shadow);
+}
+
+.nav_links li {
+	display: inline-block;
+	padding: .5rem .5rem;
+}
+
+.navbar > button {
+	color: white;
+	padding: 9px 25px;
+	background-color: var(--clr-secondary);
+	border: none;
+	border-radius: 30px;
+	cursor: pointer;
+	transition: all .3s ease 0s;
+	box-shadow: 0 0 10px var(--clr-shadow);
+}
+
+.navbar button:hover,
+.navbar button:focus{
+	background-color: var(--clr-accent);
+}
+
+.navbar li button {
+	padding: 9px 25px;
+	background-color: var(--clr-button1);
+	border: none;
+	border-radius: 30px;
+	cursor: pointer;
+	transition: all .3s ease 0s;
+	box-shadow: 0 0 10px var(--clr-shadow);
+}
+
+.navbar li button:hover,
+.navbar li button:focus {
+	background-color: var(--clr-button2);
+}
+
+.button {
+	color: white;
+	padding: 9px 25px;
+	background-color: var(--clr-secondary);
+	border: none;
+	border-radius: 30px;
+	cursor: pointer;
+	transition: all .3s ease 0s;
+}
+
+.button:hover,
+.button:focus {
+	background-color: var(--clr-accent);
+}
+
+form {
+	background-color: var(--clr-nav);
+	border-radius: 30px;
+	box-shadow: 0 0 15px var(--clr-shadow);
+	width: 45ch;
+	padding: 1rem;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+form input, form textarea{
+	padding: .5rem;
+	border: none;
+	border-radius: 30px;
+	box-shadow: 0 0 10px var(--clr-shadow);
+	background-color: var(--background);
+	color: var(--foreground);
+	display: flex;
+	justify-content: end;
+}
+
+.form-card {
+	padding: 2rem;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.form li {
+	padding: .5rem;
+}
+
+.center-button {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.list_container {
+	padding: 2rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	flex-wrap: wrap;
+}
+
+.card {
+	background-color: var(--clr-nav);
+	border-radius: 30px;
+	box-shadow: 0 0 15px var(--clr-shadow);
+	width: 32ch;
+	height: 52ch;
+	padding-top: 1rem;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	transition: all .3s ease 0s;
+}
+
+.card li {
+	display: flex;
+	justify-content: center;
+	padding-block: .5rem;
+	padding-inline: 1rem;
+}
+
+.card img {
+	border-radius: 30px;
+	box-shadow: 0 0 15px var(--clr-shadow);
+}
+
+.list_container a {
+	padding-block: 2rem;
+	padding-inline: 2rem;
+}
+
+.card:hover,
+.list_container a:focus {
+	transform: translateY(-1rem) scale(1.05);
+	background-color: var(--clr-focus);
+}
+
+.data-container {
+	padding: 2rem;
+	display: flex;
+	justify-content: center;
+	align-items: start;
+	width: 100vw;
+	flex-wrap: wrap;
+	gap: 2rem;
+}
+
+.data-card {
+	background-color: var(--clr-nav);
+	border-radius: 30px;
+	box-shadow: 0 0 15px var(--clr-shadow);
+	width: 40ch;
+	height: max-content;
+	padding-top: 1rem;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	padding-inline: 2rem;
+	padding-bottom: 1rem;
+}
+
+.data-card li {
+	display: flex;
+	justify-content: center;
+	padding-block: 1rem;
+	padding-inline: 1rem;
+}
+
+.single-image {
+	padding: 1.5rem;
+	width: max-content;
+	border-radius: 30px;
+	background-color: var(--clr-nav);
+	box-shadow: 0 0 15px var(--clr-shadow);
+}
+
+.big-picture {
+	border-radius: 30px;
+	box-shadow: 0 0 15px var(--clr-shadow);
+	width: 60ch;
+	min-width: 60ch;
+}
+
+.desc {
+	width: 30ch;
+	height: 28ch;
+	border-radius: 30px;
+	background-color: var(--clr-desc);
+	box-shadow: 0 0 2px var(--clr-shadow);
+}
+
+.delete {
+	background: none;
+	width: auto;
+	padding: 0;
+}
+
+.user_upload {
+	height: max-content;
+}
+
+.user_upload:hover,
+.user_upload:focus {
+	transform: none;
+	background-color: var(--clr-nav);
+}
+
+.red-button {
+	color: white;
+	background-color: var(--clr-red);
+	transition: all .3s ease 0s;
+}
+
+.red-button:hover,
+.red-button:focus {
+	cursor: pointer;
+	background-color: var(--clr-red-hover);
+}
+
+.link {
+	color: var(--clr-accent);
+}
+
+.link:hover,
+.link:focus {
+	text-decoration: underline;
+}
+
+.modal {
+	margin: auto;
+	background-color: var(--clr-nav);
+	border-radius: 30px;
+	border: none;
+	box-shadow: 0 0 15px var(--clr-shadow);
+}
+
+.modal li {
+	padding: 2rem;
+}
+
+.modal::backdrop {
+	background: rgba(0, 0, 0, 0.3);
+}
