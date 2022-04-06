@@ -3,7 +3,7 @@
 <html lang="hu">
 	<head>
 		<title>Magányos állatok</title>
-		<meta charset="UTF-8">
+		<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="/style.css">
 	</head>
 	<body>
