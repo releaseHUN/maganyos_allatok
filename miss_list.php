@@ -2,7 +2,7 @@
 
 include "connect_db.php";
 
-$query = mysqli_query($adb, "SELECT * FROM allatok ORDER BY miss_date DESC");
+$query = mysqli_query($adb, "SELECT * FROM allatok WHERE upload_time >= DATE_SUB(CURDATE(), INTERVAL 60 DAY) ORDER BY miss_date DESC");
 
 echo("<div class='list_container'>");
 

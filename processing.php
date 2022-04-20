@@ -68,8 +68,8 @@ switch ($_POST["proc"]) {
 		$date = date("Y-m-d H:i:s", strtotime($input_date));    //converts the html form time into a format that the database accepts
 		$picture_name = hash_file("sha256", $_FILES["pic"]['tmp_name']);	//hashing the file contents to generate a new filename
 		placePicture($picture_name); 	//function to upload the picture to the server
-		$query = "INSERT INTO allatok (id, uploader_id, name, description, picture, city, miss_date, type)
-									VALUES(null, '$_SESSION[uid]', '$_POST[name]', '$_POST[desc]', '$picture_name', '$city', '$date', '$_POST[type]')";
+		$query = "INSERT INTO allatok (id, uploader_id, name, description, picture, city, miss_date, type, upload_time)
+									VALUES(null, '$_SESSION[uid]', '$_POST[name]', '$_POST[desc]', '$picture_name', '$city', '$date', '$_POST[type]', NOW())";
 		mysqli_query($adb, $query);
 		mysqli_close($adb);
 		header("location: /");
@@ -138,7 +138,7 @@ switch ($_POST["proc"]) {
 
 //function to upload pictures to the server, it needs and input that defines the filename after the upload, uploads the original copy to the /pictures folder and makes a smaller copy to the /small_pictures folder
 function placePicture($picture_name) {
-	move_uploaded_file($_FILES["pic"]['tmp_name'], "/pictures/" . $picture_name . ".jpg");
+	move_uploaded_file($_FILES["pic"]["tmp_name"], "/pictures/" . $picture_name . ".jpg");
 	$big_picture = imagecreatefromjpeg("/pictures/" . $picture_name . ".jpg");
 
 	$bigX = imagesx($big_picture);
