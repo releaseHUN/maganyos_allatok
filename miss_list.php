@@ -14,6 +14,7 @@ while ($line = mysqli_fetch_array($query)) {
 	echo("<li><img alt='állat' src='/small_pictures/$line[picture].jpg' loading='lazy'></li>");
 	echo("<li>Eltűnt: $line[miss_date]</li>");
 	echo("<li class='desc'>$line[description]</li>");
+	echo("<li></li>");
 	echo("</ul>");
 	echo("</div>");
 	echo("</a>");

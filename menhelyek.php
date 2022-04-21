@@ -13,7 +13,8 @@ while ($line = mysqli_fetch_array($query)) {
 	echo("<li>$line[nev]</li>");
 	echo("<li><img alt='állat' src='/small_pictures/$line[picture].jpg' loading='lazy'></li>");
 	echo("<li>$line[city]</li>");
-	echo("<li>$line[leiras]</li>");
+	echo("<li class='desc'>$line[leiras]</li>");
+	echo("<li></li>");
 	echo("</ul>");
 	echo("</div>");
 	echo("</a>");

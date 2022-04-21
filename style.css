@@ -186,7 +186,7 @@ form input, form textarea{
 	border-radius: 30px;
 	box-shadow: 0 0 15px var(--clr-shadow);
 	width: 32ch;
-	height: 52ch;
+	height: max-content;
 	padding-top: 1rem;
 	display: flex;
 	justify-content: center;
