@@ -105,8 +105,8 @@ switch ($_POST["proc"]) {
 		$picture = mysqli_fetch_array($query2);
 		$filename = "$picture[picture].jpg";
 		if(mysqli_num_rows($query2) == 1) {		//deletes the pictures of the animal from the server, and the data from the database
-			unlink("/pictures/$filename");
-			unlink("/small_pictures/$filename");
+			unlink("./pictures/$filename");
+			unlink("./small_pictures/$filename");
 			mysqli_query($adb, $query);
 		}
 		mysqli_close($adb);
@@ -120,8 +120,8 @@ switch ($_POST["proc"]) {
 		$picture = mysqli_fetch_array($query2);
 		$filename = "$picture[picture].jpg";
 		if (mysqli_num_rows($query2) == 1) {    //deletes the pictures of the animal from the server, and the data from the database
-			unlink("/pictures/$filename");
-			unlink("/small_pictures/$filename");
+			unlink("./pictures/$filename");
+			unlink("./small_pictures/$filename");
 			mysqli_query($adb, $query);
 		}
 		mysqli_close($adb);
@@ -138,8 +138,8 @@ switch ($_POST["proc"]) {
 
 //function to upload pictures to the server, it needs and input that defines the filename after the upload, uploads the original copy to the /pictures folder and makes a smaller copy to the /small_pictures folder
 function placePicture($picture_name) {
-	move_uploaded_file($_FILES["pic"]["tmp_name"], "/pictures/" . $picture_name . ".jpg");
-	$big_picture = imagecreatefromjpeg("/pictures/" . $picture_name . ".jpg");
+	move_uploaded_file($_FILES["pic"]["tmp_name"], "./pictures/" . $picture_name . ".jpg");
+	$big_picture = imagecreatefromjpeg("./pictures/" . $picture_name . ".jpg");
 
 	$bigX = imagesx($big_picture);
 	$bigY = imagesy($big_picture);
@@ -164,7 +164,7 @@ function placePicture($picture_name) {
 		$bigY
 	);
 
-	imagejpeg($small_picture, "/small_pictures/" . $picture_name . ".jpg");
+	imagejpeg($small_picture, "./small_pictures/" . $picture_name . ".jpg");
 
 	imagedestroy($small_picture);
 	imagedestroy($big_picture);
